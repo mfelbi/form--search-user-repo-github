@@ -1,0 +1,138 @@
+/* Global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input dan Tombol */
+input,
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: none; /* Hapus shadow pada input dan tombol */
+}
+
+/* Hapus shadow pada input */
+input {
+  width: 300px;
+  border: 1px solid #ccc;
+}
+
+/* Hapus shadow pada button */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  margin: 10px 0;
+}
+
+li button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #555;
+}
+
+/* Hapus shadow pada kontainer utama div */
+div {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: none; /* Hapus shadow pada div */
+}
+
+/* Tombol kembali */
+button.back {
+  background-color: #f0f0f0;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Hapus shadow pada kontainer utama agar tidak tumpang tindih */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: none; /* Hilangkan shadow pada #root */
+}
+
+/* Media Queries untuk Responsif pada Handphone */
+@media (max-width: 768px) {
+  /* Ubah ukuran input dan tombol agar lebih besar di handphone */
+  input {
+    width: 100%; /* Lebar input mengikuti lebar layar */
+    font-size: 14px; /* Ukuran font input lebih kecil di handphone */
+  }
+
+  button {
+    width: 100%; /* Tombol mengikuti lebar layar */
+    font-size: 14px; /* Ukuran font tombol lebih kecil di handphone */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Ukuran font heading lebih kecil di handphone */
+  }
+
+  /* Menambahkan sedikit padding agar konten tidak terlalu rapat */
+  div {
+    padding: 15px;
+  }
+
+  ul {
+    margin-top: 15px;
+  }
+
+  li {
+    margin: 8px 0;
+  }
+}
+/* Tombol Close Repository */
+button.close-repository {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button.close-repository:hover {
+  background-color: #c82333;
+}
