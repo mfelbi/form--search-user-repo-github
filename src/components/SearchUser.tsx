@@ -16,7 +16,7 @@ const SearchUser = ({ setSelectedUser, setUsers }: SearchUserProps) => {
     setError("");
     try {
       const response = await axios.get(`https://api.github.com/search/users?q=${username}`);
-      setUsers(response.data.items.slice(0, 5)); // Ambil hingga 5 pengguna
+      setUsers(response.data.items.slice(0, 5)); //5 pengguna
     } catch (err) {
       setError("Gagal memuat pengguna.");
     } finally {

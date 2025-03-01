@@ -7,7 +7,7 @@ interface UserRepositoriesProps {
 
 const UserRepositories: React.FC<UserRepositoriesProps> = ({ username }) => {
   const [repos, setRepos] = useState<any[]>([]);
-  const [displayedRepos, setDisplayedRepos] = useState<any[]>([]); // Repositori yang ditampilkan
+  const [displayedRepos, setDisplayedRepos] = useState<any[]>([]); 
   const [loadCount, setLoadCount] = useState(5); // Jumlah repositori yang ditampilkan
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -19,7 +19,7 @@ const UserRepositories: React.FC<UserRepositoriesProps> = ({ username }) => {
       try {
         const response = await axios.get(`https://api.github.com/users/${username}/repos`);
         setRepos(response.data);
-        setDisplayedRepos(response.data.slice(0, loadCount)); // Menampilkan repositori pertama sesuai loadCount
+        setDisplayedRepos(response.data.slice(0, loadCount));
       } catch (err) {
         setError("Gagal memuat repositori.");
       } finally {
@@ -31,7 +31,7 @@ const UserRepositories: React.FC<UserRepositoriesProps> = ({ username }) => {
   }, [username, loadCount]);
 
   const loadMoreRepos = () => {
-    const newLoadCount = loadCount + 5; // Menambah 5 repositori
+    const newLoadCount = loadCount + 5;
     setLoadCount(newLoadCount);
     setDisplayedRepos(repos.slice(0, newLoadCount)); // Update repositori yang ditampilkan
   };

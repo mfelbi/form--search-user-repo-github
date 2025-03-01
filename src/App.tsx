@@ -21,7 +21,6 @@ const App = () => {
     <div>
       <h1>GitHub User & Repository </h1>
       <div className="container">
-        {/* Menampilkan hasil pencarian jika repositori tidak terlihat */}
         {!isRepositoryVisible ? (
           <SearchUser setSelectedUser={handleSelectUser} setUsers={setUsers} />
         ) : (
@@ -29,12 +28,11 @@ const App = () => {
             <button className="back" onClick={handleCloseRepository}>
               Close Repository
             </button>
-            {selectedUser && <UserRepositories username={selectedUser} />} {/* Pastikan selectedUser bukan null */}
+            {selectedUser && <UserRepositories username={selectedUser} />} 
           </div>
         )}
       </div>
 
-      {/* Daftar hasil pencarian tetap ada */}
       {!isRepositoryVisible && users.length > 0 && (
         <div>
           <h2>Search Results</h2>
