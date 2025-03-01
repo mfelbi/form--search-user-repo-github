@@ -3,10 +3,15 @@ import axios from "axios";
 
 interface SearchUserProps {
   setSelectedUser: (user: string) => void;
-  setUsers: React.Dispatch<React.SetStateAction<any[]>>; // Prop untuk mengirimkan hasil pencarian
+  setUsers: React.Dispatch<React.SetStateAction<any[]>>;
 }
 
-const SearchUser = ({ setSelectedUser, setUsers }: SearchUserProps) => {
+interface User {
+  id: number;
+  login: string;
+}
+
+const SearchUser = ({ setUsers }: SearchUserProps) => {
   const [username, setUsername] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -16,7 +21,8 @@ const SearchUser = ({ setSelectedUser, setUsers }: SearchUserProps) => {
     setError("");
     try {
       const response = await axios.get(`https://api.github.com/search/users?q=${username}`);
-      setUsers(response.data.items.slice(0, 5)); //5 pengguna
+      const searchResults: User[] = response.data.items.slice(0, 5); // Ambil 5 pengguna pertama
+      setUsers(searchResults); 
     } catch (err) {
       setError("Gagal memuat pengguna.");
     } finally {

@@ -4,17 +4,17 @@ import UserRepositories from "./components/UserRepositories";
 import "./App.css";
 
 const App = () => {
-  const [selectedUser, setSelectedUser] = useState<string | null>(null); // State untuk user yang dipilih
-  const [users, setUsers] = useState<any[]>([]); // State untuk hasil pencarian
-  const [isRepositoryVisible, setIsRepositoryVisible] = useState<boolean>(false); // Mengontrol tampilan repositori
+  const [selectedUser, setSelectedUser] = useState<string | null>(null); // State user yang dipilih
+  const [users, setUsers] = useState<any[]>([]); // State hasil pencarian
+  const [isRepositoryVisible, setIsRepositoryVisible] = useState<boolean>(false);
 
   const handleSelectUser = (user: string) => {
-    setSelectedUser(user); // Pilih user
-    setIsRepositoryVisible(true); // Tampilkan repositori ketika user dipilih
+    setSelectedUser(user); 
+    setIsRepositoryVisible(true); 
   };
 
   const handleCloseRepository = () => {
-    setIsRepositoryVisible(false); // Menyembunyikan repositori, kembali ke pencarian
+    setIsRepositoryVisible(false); 
   };
 
   return (
@@ -32,7 +32,6 @@ const App = () => {
           </div>
         )}
       </div>
-
       {!isRepositoryVisible && users.length > 0 && (
         <div>
           <h2>Search Results</h2>
